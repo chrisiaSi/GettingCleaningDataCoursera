@@ -64,13 +64,13 @@ colnames(trainTestXYMeanStd) <- gsub("fBody", "frequencyBody", colnames(trainTes
 colnames(trainTestXYMeanStd) <- gsub("Acc", "Acceleration", colnames(trainTestXYMeanStd))
 colnames(trainTestXYMeanStd) <- gsub("Mag", "Magnitude", colnames(trainTestXYMeanStd))
 
-#Saving the Tidy data into a file called "uciHarTidyData.txt" excluding the header
-write.table(trainTestXYMeanStd, "./uciHarTidyData.txt", col.names = FALSE, sep = "\t", row.names = FALSE, quote = FALSE)
-
 #Step 5:
 # From the tidy data set in previous step, create a new independent tidy data set with the 
 #average of each variable for each activity and each subject.
 uciHarTidyDataAvg <- trainTestXYMeanStd %>%
   group_by(trainTestXYMeanStd$activityname, trainTestXYMeanStd$subject) %>%
   summarise_at(vars(-activityname, -subject), mean , na.rm=TRUE)
+
+#Saving the Tidy data into a file called "uciHarTidyDataAvg.txt" excluding the header
+write.table(uciHarTidyDataAvg, "./uciHarTidyDataAvg.txt", col.names = FALSE, sep = "\t", row.names = FALSE, quote = FALSE)
 

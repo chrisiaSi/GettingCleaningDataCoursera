@@ -23,7 +23,8 @@ Dropping special characters from the column names
 Adding more descriptive names to the variables
 Replacing "t" with time, "f" with frequency, "acc" with accelaration, "mag" with magnitude
 
-Saving the Tidy data into a file called "uciHarTidyData.txt" excluding the header
 
 From the tidy data set in previous step, create a new independent tidy data set with the 
 average of each variable for each activity and each subject.
+
+Saving the Tidy data into a file called "uciHarTidyDataAvg.txt" excluding the header
